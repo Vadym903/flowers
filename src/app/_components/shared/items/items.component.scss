@@ -1,0 +1,100 @@
+$borderColor: #DAD3D3;
+
+section {
+  margin: 0 auto;
+  padding: 100px 130px;
+
+  .top-container {
+    margin-top: 20px;
+    width: 100%;
+    height: 450px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .filter {
+    margin-top: 20px;
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+    //transition: height 0.5s ease-in;
+    overflow: hidden;
+    border: 1px solid $borderColor;
+
+    &-field {
+      width: 100%;
+      height: 100px;
+      border-radius: 5px;
+      background-color: #95BDBB;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+      box-sizing: border-box;
+
+      input {
+        width: 100%;
+        height: 42px;
+        font-size: 28px;
+        border-radius: 15px;
+        border: 1px solid $borderColor;
+      }
+    }
+
+    .additional-sorting-options {
+      padding: 35px 23px;
+      display: flex;
+      justify-content: space-around;
+
+      .sorting {
+        display: flex;
+        align-items: center;
+
+        &-title {
+          font-size: 18px;
+          font-weight: 600;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+
+
+  .filter:hover,
+  .open {
+    height: 225px;
+    //transition: height 0.25s ease-in;
+  }
+
+  .lots-cotainer {
+    margin-top: 50px;
+    border: 2px solid $borderColor;
+    border-radius: 5px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px 64px;
+    grid-template-areas:
+      ". . . ."
+      ". . . ."
+      ". . . .";
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  section {
+    .lots-cotainer {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas:
+        ". . ."
+        ". . ."
+        ". . .";
+    }
+  }
+}

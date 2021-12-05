@@ -1,0 +1,24 @@
+<section class="main">
+  <div class="logo" (click)="navigate('/items')">FLOWERS</div>
+  <div class="right-section">
+    <div class="user-info" *ngIf="user">
+      {{user?.username}}
+      <button mat-raised-button class="user-profile" >
+        <img src="https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/124460815/original/93d8d9fa9a6842a5c8f09e3fddf4970db9071800/draw-you-an-anime-profile-picture.png">
+      </button>
+      <button mat-raised-button (click)="openSideNaw()" class="bucket"> <mat-icon>shopping_basket</mat-icon> </button>
+    </div>
+    <div class="auth">
+      <button mat-raised-button (click)="logOut()" *ngIf="user; else login">
+        Exit
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<ng-template #login>
+    <button mat-raised-button (click)="navigate('/login')" *ngIf="user === null">
+      Login
+    </button>
+</ng-template>

@@ -1,0 +1,27 @@
+<section>
+  <div class="top-container">
+    <img src="https://www.talech.com/blog/wp-content/uploads/2020/03/shutterstock_766512268-scaled-1.jpg" alt="">
+  </div>
+  <div class="filter" [ngClass]="{'open': sortingSelect.panelOpen}">
+    <div class="filter-field">
+      <input type="text" [(ngModel)]="filterByTitleText" (ngModelChange)="loadPage()" placeholder="Search...">
+    </div>
+
+    <div class="additional-sorting-options">
+      <div class="sorting">
+        <div class="sorting-title"> Sort by:</div>
+
+        <mat-form-field appearance="fill" class="select">
+          <mat-select class="custom-select" #sortingSelect>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+  </div>
+
+  <div class="lots-cotainer">
+    <app-single-item *ngFor="let item of items; trackBy: trackById" [item]="item"></app-single-item>
+  </div>
+  <mat-paginator [length]="items.length" [pageSize]="12" [pageSizeOptions]="[12, 24]">
+  </mat-paginator>
+</section>

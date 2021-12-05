@@ -1,0 +1,45 @@
+.main {
+  margin: 50px 20px;
+  display: flex;
+  justify-content: space-between;
+
+  .container {
+    &-left {
+
+    }
+
+    &-middle {
+      width: 600px;
+      height: 600px;
+      border: 2px solid black;
+    }
+
+    &-right {
+      width: 250px;
+      border: 2px solid black;
+      max-height: 600px;
+      overflow-y: scroll;
+    }
+  }
+
+  .image-container {
+    width: 250px;
+    height: 600px;
+    border: 2px solid black;
+    max-height: 600px;
+    overflow-y: scroll;
+    z-index: 999;
+    
+    .image {
+      border: 2px solid gray;
+      width: 250px;
+      height: 250px;
+      z-index: 999;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
