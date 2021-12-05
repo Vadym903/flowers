@@ -1,0 +1,33 @@
+<section>
+  <div class="top"></div>
+  <div class="title">Shopping bucket</div>
+
+  <div class="items-container">
+    <div class="item" *ngFor="let item of items">
+      <div class="image-container">
+        <img [src]="item.imgUrl">
+      </div>
+      <div class="info-container">
+        <div class="field">{{item.name}}</div>
+        <div class="field">{{item.price}}$</div>
+      </div>
+      <button mat-raised-button class="remove-item" (click)="removeItem(item)">X</button>
+    </div>
+  </div>
+
+  <div class="delivery-address">
+    <input matInput
+           matGoogleMapsAutocomplete
+           (onAutocompleteSelected)="onAutocompleteSelected($event)"
+           (onLocationSelected)="onLocationSelected($event)"
+           placeholder="address"
+           [(ngModel)]="address"
+           [value]="address"
+           >
+  </div>
+
+  <div class="info">
+    total price: {{totalPrice}}
+  </div>
+  <button mat-raised-button class="buy-items" (click)="buy()">Buy</button>
+</section>

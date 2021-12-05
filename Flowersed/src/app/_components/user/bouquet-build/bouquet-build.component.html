@@ -1,0 +1,14 @@
+<section class="main">
+  <div class="container-left image-container" >
+    <div class="image" *ngFor="let flower of flowers" cdkDrag>
+      <img [src]="flower.imageURL">
+    </div>
+
+  </div>
+  <div class="container-middle"></div>
+  <div class="container-right image-container" cdkDropList>
+    <div class="image" *ngFor="let package of packaging" cdkDrag>
+      <img [src]="package.imageURL">
+    </div>
+  </div>
+</section>
