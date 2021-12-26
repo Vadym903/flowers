@@ -27,4 +27,8 @@ export class ItemService {
         })));
   }
 
+  public getById(id: number): Observable<Item> {
+      return this.http.get<Item>(this.baseUrl+ `/items/${id}/`);
+  }
+
 }

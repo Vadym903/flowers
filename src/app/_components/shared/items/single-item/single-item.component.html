@@ -1,7 +1,7 @@
 <section>
-  <div class="photo-container">
+  <a mat-button class="photo-container" (click)="openInfoPage()">
     <img [src]="item.imgUrl">
-  </div>
+  </a>
   <div class="middle-container">
     <div class="title">
       {{item.name }}

@@ -28,6 +28,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { BucketComponent } from './_components/shared/bucket/bucket.component';
 import { MatGoogleMapsAutocompleteModule } from "@angular-material-extensions/google-maps-autocomplete";
 import { AgmCoreModule } from "@agm/core";
+import { UserPageComponent } from './_components/user/user-page/user-page.component';
+import { ItemInfoComponent } from './_components/shared/item-info/item-info.component';
 
 
 @NgModule({
@@ -38,7 +40,9 @@ import { AgmCoreModule } from "@agm/core";
     BouquetBuildComponent,
     ItemsComponent,
     SingleItemComponent,
-    BucketComponent
+    BucketComponent,
+    UserPageComponent,
+    ItemInfoComponent
   ],
   imports: [
     BrowserModule,

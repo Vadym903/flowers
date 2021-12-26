@@ -5,40 +5,44 @@ import { User } from "../../../_models/user.model";
 import { OrderService } from "../../../_services/order.service";
 
 @Component({
-  selector: 'app-nav-bar',
-  templateUrl: './nav-bar.component.html',
-  styleUrls: ['./nav-bar.component.scss']
+    selector: 'app-nav-bar',
+    templateUrl: './nav-bar.component.html',
+    styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
 
-  user: User | null = null;
+    user: User | null = null;
 
-  constructor(
-    private router: Router,
-    private authService: AuthService,
-    private oderService: OrderService) {
-  }
+    constructor(
+        private router: Router,
+        private authService: AuthService,
+        private oderService: OrderService) {
+    }
 
-  ngOnInit(): void {
-    this.updateUser();
+    ngOnInit(): void {
+        this.updateUser();
 
-    this.authService.currentUserEmitter.subscribe(() => this.updateUser());
-  }
+        this.authService.currentUserEmitter.subscribe(() => this.updateUser());
+    }
 
-  private updateUser() {
-    this.authService.getCurrentUser$().subscribe(user => this.user = user.id ? user : null);
-  }
+    private updateUser() {
+        this.authService.getCurrentUser$().subscribe(user => this.user = user.id ? user : null);
+    }
 
-  navigate(url: string) {
-    this.router.navigateByUrl(url);
-  }
+    openUserProfile() {
+        this.router.navigateByUrl("user");
+    }
 
-  logOut(): void {
-    this.authService.logOut();
-  }
+    navigate(url: string) {
+        this.router.navigateByUrl(url);
+    }
 
-  openSideNaw(): void {
-    this.oderService.isOrderSideNawOpened.next(true);
-  }
+    logOut(): void {
+        this.authService.logOut();
+    }
+
+    openSideNaw(): void {
+        this.oderService.isOrderSideNawOpened.next(true);
+    }
 
 }

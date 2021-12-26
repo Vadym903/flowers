@@ -44,30 +44,6 @@ section {
         border: 1px solid $borderColor;
       }
     }
-
-    .additional-sorting-options {
-      padding: 35px 23px;
-      display: flex;
-      justify-content: space-around;
-
-      .sorting {
-        display: flex;
-        align-items: center;
-
-        &-title {
-          font-size: 18px;
-          font-weight: 600;
-          margin-right: 15px;
-        }
-      }
-    }
-  }
-
-
-  .filter:hover,
-  .open {
-    height: 225px;
-    //transition: height 0.25s ease-in;
   }
 
   .lots-cotainer {

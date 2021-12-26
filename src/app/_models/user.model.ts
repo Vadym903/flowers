@@ -5,6 +5,7 @@ export class User {
   public is_superuser?: boolean;
   public phone?: string;
   public email?: string;
+  public img?: string;
 
   constructor(init?: Partial<User>) {
     Object.assign(this, init);

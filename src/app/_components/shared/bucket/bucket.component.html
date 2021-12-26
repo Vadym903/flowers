@@ -17,9 +17,6 @@
 
   <div class="delivery-address">
     <input matInput
-           matGoogleMapsAutocomplete
-           (onAutocompleteSelected)="onAutocompleteSelected($event)"
-           (onLocationSelected)="onLocationSelected($event)"
            placeholder="address"
            [(ngModel)]="address"
            [value]="address"

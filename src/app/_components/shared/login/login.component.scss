@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   margin-top: 250px;
+  padding-bottom: 200px;
 
   .login-section {
     width: 380px;
@@ -46,34 +47,6 @@
 
       button {
         width: 100%;
-      }
-    }
-  }
-
-  .create-new-bouquet {
-    margin-left: 100px;
-    width: 450px;
-    height: 420px;
-    border: 2px solid #E8E3CD;
-    border-radius: 20px;
-
-    button {
-      width: 100%;
-      height: 100%;
-      border-radius: 17px;
-
-      .button-content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-
-        mat-icon {
-          color: rosybrown;
-          font-size: 60px;
-          height: fit-content;
-          width: fit-content;
-        }
       }
     }
   }

@@ -7,6 +7,7 @@ export class Item {
               public name?: string,
               public in_stock?: number,
               public imgUrl?: string,
-              public price?: number) {
+              public price?: number,
+              public count?: number) {
   }
 }

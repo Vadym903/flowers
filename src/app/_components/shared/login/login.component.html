@@ -14,7 +14,7 @@
 
         <mat-form-field appearance="legacy">
           <mat-label>Password</mat-label>
-          <input matInput formControlName="password" autocomplete="off">
+          <input matInput formControlName="password" type="password" autocomplete="off">
         </mat-form-field>
 
         <ng-container *ngIf="isRegistration">
@@ -48,13 +48,5 @@
         {{isRegistration ? 'Registration' : 'Login'}}
       </button>
     </div>
-  </section>
-  <section class="create-new-bouquet">
-    <button mat-flat-button class="create-bouquet">
-      <div class="button-content" (click)="navigate('/bouquet-build')">
-        <mat-icon>add</mat-icon>
-        <span>Create new best bouquet!</span>
-      </div>
-    </button>
   </section>
 </section>
