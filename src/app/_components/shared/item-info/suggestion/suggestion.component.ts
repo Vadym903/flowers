@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Item } from "../../../../_models/item.model";
+import { Router } from "@angular/router";
 
 @Component({
     selector: 'app-suggestion',
@@ -9,11 +10,13 @@ import { Item } from "../../../../_models/item.model";
 export class SuggestionComponent implements OnInit {
 
     @Input() item: Item;
-
-    constructor() {
+    constructor(private router: Router) {
     }
 
     ngOnInit(): void {
     }
 
+    navigate() {
+        this.router.navigateByUrl('items/' + this.item.id).then(() => location.reload());
+    }
 }

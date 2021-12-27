@@ -62,6 +62,9 @@ export class LoginComponent implements OnInit {
     authRequest.first_name = formValue.firstName;
     authRequest.last_name = formValue.lastName;
 
+    if (formValue.password !== formValue.passwordRepeat) {
+      alert('password and password repeat aren\'t equal');
+    }
     this.authService.registration(authRequest).subscribe(() => {
       const authRequest = new AuthRequest();
       authRequest.username = formValue.username;

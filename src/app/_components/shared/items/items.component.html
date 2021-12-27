@@ -11,6 +11,4 @@
   <div class="lots-cotainer">
     <app-single-item *ngFor="let item of filteredItems; trackBy: trackById" [item]="item"></app-single-item>
   </div>
-  <mat-paginator [length]="filteredItems.length" [pageSize]="12" [pageSizeOptions]="[12, 24]">
-  </mat-paginator>
 </section>

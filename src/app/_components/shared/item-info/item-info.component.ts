@@ -17,7 +17,7 @@ export class ItemInfoComponent implements OnInit {
     photos: {
         path: string;
     }[] = [];
-    description = "Traveling with fresh flowers is a tricky endeavor because of the many rules and regulations governing what can safely be brought aboard an airplane. The water and chemical preservatives normally used to keep flowers fresh and nice looking will not successfully pass through security checkpoints because bringing large quantities of liquid aboard airplanes is prohibited. But it is possible to safely take flowers on airplanes for domestic flights and get through security checkpoints with minimal hassles by observing a few basic tips. ITEMS YOU WILL NEED Pruning shears Water Candy thermometer Vase Cut flower preservative Paper towel Plastic wrap Masking tape STEP 1 Prepare the flowers for transport several hours before arriving at the airport. Remove the leaves from along the lower half of each cut flower stem. Trim off the bottom inch from each stem. Make the cut slightly angled. Use clean pruning shears or sharp scissors to remove the leaves and trim the stems";
+    description = "";
 
     constructor(private itemService: ItemService,
                 private router: ActivatedRoute,

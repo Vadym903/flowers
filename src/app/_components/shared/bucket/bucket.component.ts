@@ -32,6 +32,7 @@ export class BucketComponent implements OnInit {
     }
 
     buy() {
+        alert("Thanks for buying!");
         this.orderService.makeOrder(this.address).subscribe(() => this.address = '');
     }
 
