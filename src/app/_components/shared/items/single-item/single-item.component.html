@@ -11,14 +11,14 @@
       <mat-icon>attach_money</mat-icon>
     </div>
     <div class="price-container">
-      in stock: {{item.in_stock}}
+      in stock: {{item.in_stock - item.ordered}}
       <mat-icon>local_shipping</mat-icon>
     </div>
     <div class="buy-container">
       <button
         mat-raised-button
         class="buy"
-        [disabled]="item.in_stock == undefined || item.in_stock < 1"
+        [disabled]="item.in_stock == undefined || item.in_stock < 1 || item.ordered >= item.in_stock"
         (click)="addToOrder()">
         Buy
       </button>

@@ -3,6 +3,7 @@ import { environment } from "../../environments/environment";
 import { EventEmitter, Injectable } from "@angular/core";
 import { Item } from "../_models/item.model";
 import { BehaviorSubject } from "rxjs";
+import { finalize } from "rxjs/operators";
 
 @Injectable({
     providedIn: 'root'
@@ -15,6 +16,13 @@ export class OrderService {
     newItemEvent = new EventEmitter<void>();
 
     constructor(private http: HttpClient) {
+    }
+
+    makeOrder(deliveryAddress: string) {
+        const itemIds = this.getOrderedItems().map(item => item.id);
+        const requestBody = {order_detail_items: itemIds, delivery_address: deliveryAddress};
+        return this.http.post(this.baseUrl + '/orders/', requestBody)
+            .pipe(finalize(() => this.clearAll()));
     }
 
     addItemToOrder(item: Item) {
@@ -36,13 +44,20 @@ export class OrderService {
 
     removeItem(itemToDelete: Item): void {
         let items = this.getOrderedItems();
-        items.forEach((item, i) => {
-            if (JSON.stringify(item) == JSON.stringify(itemToDelete)) {
-                items.splice(i, 1);
-            }
-        });
+        const indexToRemove = items.findIndex(item => JSON.stringify(item) == JSON.stringify(itemToDelete));
+        items.splice(indexToRemove, 1);
         localStorage.setItem(this.itemInStorageName, JSON.stringify(items));
         this.newItemEvent.emit();
+    }
+
+    checkHowManyOrdered(item: Item) {
+        let ordered = item.ordered || 0;
+        this.getOrderedItems().forEach(orderedItem => {
+            if (item.id === orderedItem.id) {
+                ordered++;
+            }
+        });
+        return ordered;
     }
 
     clearAll() {

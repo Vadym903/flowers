@@ -4,13 +4,13 @@
   </div>
   <div class="filter">
     <div class="filter-field">
-      <input type="text" [(ngModel)]="filterByTitleText" (ngModelChange)="loadPage()" placeholder="Search...">
+      <input type="text" [(ngModel)]="filterByTitleText" (ngModelChange)="filterItems()" placeholder="Search...">
     </div>
   </div>
 
   <div class="lots-cotainer">
-    <app-single-item *ngFor="let item of items; trackBy: trackById" [item]="item"></app-single-item>
+    <app-single-item *ngFor="let item of filteredItems; trackBy: trackById" [item]="item"></app-single-item>
   </div>
-  <mat-paginator [length]="items.length" [pageSize]="12" [pageSizeOptions]="[12, 24]">
+  <mat-paginator [length]="filteredItems.length" [pageSize]="12" [pageSizeOptions]="[12, 24]">
   </mat-paginator>
 </section>

@@ -4,25 +4,26 @@ import { OrderService } from "../../../../_services/order.service";
 import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-single-item',
-  templateUrl: './single-item.component.html',
-  styleUrls: ['./single-item.component.scss']
+    selector: 'app-single-item',
+    templateUrl: './single-item.component.html',
+    styleUrls: ['./single-item.component.scss']
 })
 export class SingleItemComponent implements OnInit {
 
-  @Input() item: Item;
+    @Input() item: Item;
 
-  constructor(private orderService: OrderService, private router: Router) { }
+    constructor(private orderService: OrderService, private router: Router) {
+    }
 
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
 
-  addToOrder(): void {
-    this.orderService.addItemToOrder(this.item);
-  }
+    }
 
-  openInfoPage() {
-    this.router.navigateByUrl('items/' + this.item.id);
-  }
+    addToOrder(): void {
+        this.orderService.addItemToOrder(this.item);
+    }
 
+    openInfoPage() {
+        this.router.navigateByUrl('items/' + this.item.id);
+    }
 }
