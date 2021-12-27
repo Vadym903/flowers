@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatSliderModule } from '@angular/material/slider';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './_components/shared/login/login.component';
@@ -30,20 +29,24 @@ import { MatGoogleMapsAutocompleteModule } from "@angular-material-extensions/go
 import { AgmCoreModule } from "@agm/core";
 import { UserPageComponent } from './_components/user/user-page/user-page.component';
 import { ItemInfoComponent } from './_components/shared/item-info/item-info.component';
+import { IvyCarouselModule } from "angular-responsive-carousel";
+import { SuggestionComponent } from './_components/shared/item-info/suggestion/suggestion.component';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    NavBarComponent,
-    BouquetBuildComponent,
-    ItemsComponent,
-    SingleItemComponent,
-    BucketComponent,
-    UserPageComponent,
-    ItemInfoComponent
-  ],
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        NavBarComponent,
+        BouquetBuildComponent,
+        ItemsComponent,
+        SingleItemComponent,
+        BucketComponent,
+        UserPageComponent,
+        ItemInfoComponent,
+        SuggestionComponent,
+        SuggestionComponent
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -63,6 +66,7 @@ import { ItemInfoComponent } from './_components/shared/item-info/item-info.comp
     MatSelectModule,
     MatDatepickerModule,
     MatPaginatorModule,
+    IvyCarouselModule,
     MatGoogleMapsAutocompleteModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyD6n7NE2lUvSYe-ceVBJWxeIQ82oDQj39E', //AIzaSyDHU77kLxWEqd66AsT8lhssukgeqOVaANA

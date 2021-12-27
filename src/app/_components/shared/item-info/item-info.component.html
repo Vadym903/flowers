@@ -1,5 +1,30 @@
-<section class="main-container">
- <div class="carousel-container">
+<section class="main-container" *ngIf="item">
 
- </div>
+    <div class="info-container">
+	<div class="title">
+	    {{item.name}}
+	</div>
+	<div class="main-info">
+	    <div class="carousel-container">
+		<carousel [cellsToShow]="1" [loop]="true" [cellWidth]="200" [width]="400" [height]="440"
+			  [images]="photos">
+		</carousel>
+	    </div>
+
+	    <div class="make-order-container">
+
+	    </div>
+	</div>
+
+	<div class="description">
+	    <div>
+		{{description}}
+	    </div>
+	    {{item.description}}
+	</div>
+    </div>
+
+    <div class="suggestions">
+	<app-suggestion *ngFor="let suggestion of suggestions" [item]="suggestion"></app-suggestion>
+    </div>
 </section>
