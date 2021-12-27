@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
       this.authForm.addControl('email', new FormControl([''], Validators.required));
       this.authForm.addControl('firstName', new FormControl([''], Validators.required));
       this.authForm.addControl('lastName', new FormControl([''], Validators.required));
+      this.authForm.addControl('phoneNumber', new FormControl([''], Validators.required));
     }
   }
 
@@ -61,11 +62,8 @@ export class LoginComponent implements OnInit {
     authRequest.email = formValue.email;
     authRequest.first_name = formValue.firstName;
     authRequest.last_name = formValue.lastName;
-    authRequest.phone_number = formValue.phoneNumber;
+    authRequest.phone = formValue.phoneNumber;
 
-    if (formValue.password !== formValue.passwordRepeat) {
-      alert('password and password repeat aren\'t equal');
-    }
     this.authService.registration(authRequest).subscribe(() => {
       const authRequest = new AuthRequest();
       authRequest.username = formValue.username;
@@ -74,7 +72,8 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/items');
       });
     }, error => {
-      alert(JSON.stringify(error));
+      let keys = Object.keys(error['error']);
+      alert(keys[0] + ": " + error['error'][keys[0]])
     });
 
   }
