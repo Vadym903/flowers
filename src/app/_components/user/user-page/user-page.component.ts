@@ -10,7 +10,6 @@ import { AuthService } from "../../../_services/auth-service.service";
 export class UserPageComponent implements OnInit {
 
     user: User;
-
     constructor(private userService: AuthService) {
     }
 

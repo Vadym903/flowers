@@ -31,6 +31,7 @@ import { UserPageComponent } from './_components/user/user-page/user-page.compon
 import { ItemInfoComponent } from './_components/shared/item-info/item-info.component';
 import { IvyCarouselModule } from "angular-responsive-carousel";
 import { SuggestionComponent } from './_components/shared/item-info/suggestion/suggestion.component';
+import { OrdersComponent } from './_components/user/orders/orders.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { SuggestionComponent } from './_components/shared/item-info/suggestion/s
         UserPageComponent,
         ItemInfoComponent,
         SuggestionComponent,
-        SuggestionComponent
+        SuggestionComponent,
+        OrdersComponent
     ],
   imports: [
     BrowserModule,

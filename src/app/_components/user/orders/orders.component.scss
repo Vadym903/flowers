@@ -1,0 +1,18 @@
+.main-container {
+  display: flex;
+
+  .orders-container {
+    .single-order {
+      margin-top: 10px;
+      border: 1px solid black;
+      padding: 4px;
+
+      .field {
+        font-size: 18px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

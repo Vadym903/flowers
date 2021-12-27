@@ -2,8 +2,9 @@ import { HttpClient } from "@angular/common/http";
 import { environment } from "../../environments/environment";
 import { EventEmitter, Injectable } from "@angular/core";
 import { Item } from "../_models/item.model";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { finalize } from "rxjs/operators";
+import { Order } from "../_models/order.model";
 
 @Injectable({
     providedIn: 'root'
@@ -23,6 +24,10 @@ export class OrderService {
         const requestBody = {order_detail_items: itemIds, delivery_address: deliveryAddress};
         return this.http.post(this.baseUrl + '/orders/', requestBody)
             .pipe(finalize(() => this.clearAll()));
+    }
+
+    getUserOrders(): Observable<Order[]> {
+        return this.http.get<Order[]>(this.baseUrl + "/orders/get_orders/");
     }
 
     addItemToOrder(item: Item) {
