@@ -12,7 +12,7 @@
     .description {
       max-width: 1015px;
       margin-top: 30px;
-      font-size: 16px;
+      font-size: 20px;
     }
 
     .main-info {
@@ -24,10 +24,54 @@
       }
 
       .make-order-container {
-        margin-left: 300px;
-        border: 1px solid black;
+        margin-left: 35px;
         width: 300px;
         height: 440px;
+
+        .in-stock {
+          margin-top: 20px;
+          font-size: 20px;
+          display: flex;
+          align-items: center;
+        }
+
+        button {
+          margin-top: 20px;
+        }
+
+        .payment-services {
+          width: 100%;
+          margin-top: 33px;
+          img {
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+
+        .price {
+          hr {
+
+          }
+          &-title {
+            height: 35px;
+            background: #2e2e2e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 600;
+            font-size: 25px;
+            letter-spacing: 4px;
+          }
+
+          .current {
+            font-size: 20px;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
       }
     }
   }
@@ -35,7 +79,7 @@
   .suggestions {
     margin-top: 46px;
     margin-left: auto;
-    width: 300px;
+    width: 350px;
     border: 1px solid black;
     max-height: 700px;
     overflow-y: scroll;

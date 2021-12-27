@@ -6,6 +6,7 @@
   .img-container {
     width: 100px;
     height: 100px;
+    min-width: 100px;
 
     img {
       width: 100%;
@@ -20,11 +21,21 @@
     .title {
       font-size: 18px;
       font-weight: 600;
+      overflow: hidden;
+      max-height: 41px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
 
     .description {
       font-size: 14px;
       margin-top: 5px;
+      overflow: hidden;
+      max-height: 46px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
   }
 }

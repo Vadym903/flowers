@@ -6,12 +6,35 @@
 	</div>
 	<div class="main-info">
 	    <div class="carousel-container">
-		<carousel [cellsToShow]="1" [loop]="true" [cellWidth]="200" [width]="400" [height]="440"
+		<carousel [cellsToShow]="1" [loop]="true" [cellWidth]="200" [width]="500" [height]="500"
 			  [images]="photos">
 		</carousel>
 	    </div>
-
-	    <div class="make-order-container">
+	    <div class="make-order-container ">
+		<div class="price">
+		    <div class="price-title">
+			Price
+		    </div>
+		    <div class="current">
+			{{item.price}}
+			<mat-icon>attach_money</mat-icon>
+		    </div>
+		    <hr>
+		</div>
+		<div class="in-stock">
+		    in stock: {{item.in_stock}}
+		    <mat-icon>local_shipping</mat-icon>
+		</div>
+		<button
+			mat-raised-button
+			class="buy"
+			[disabled]="item.in_stock == undefined || item.in_stock < 1"
+			(click)="addToOrder()">
+		    Buy
+		</button>
+		<div class="payment-services">
+		    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwNcOBXcUpP3YKcKgDYI5XHGEWC2Lg_uFPe9uIBtn9_Rehova5BUNZ55W8IrKHoUdGksI&usqp=CAU">
+		</div>
 
 	    </div>
 	</div>
