@@ -74,7 +74,7 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/items');
       });
     }, error => {
-      alert(error[0]);
+      alert(JSON.stringify(error));
     });
 
   }
