@@ -61,6 +61,7 @@ export class LoginComponent implements OnInit {
     authRequest.email = formValue.email;
     authRequest.first_name = formValue.firstName;
     authRequest.last_name = formValue.lastName;
+    authRequest.phone_number = formValue.phoneNumber;
 
     if (formValue.password !== formValue.passwordRepeat) {
       alert('password and password repeat aren\'t equal');
@@ -72,6 +73,8 @@ export class LoginComponent implements OnInit {
       this.authService.login(authRequest).subscribe(() => {
         this.router.navigateByUrl('/items');
       });
+    }, error => {
+      alert(error);
     });
 
   }
